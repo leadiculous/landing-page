@@ -52,7 +52,7 @@ const AccordinationItem = ({
     >
       <div className="flex items-center ">
         <span className="flex-1 text-lg font-bold">{question}</span>
-        {isOpen ? <MinusIcon /> : <PlusIcon />}
+        <button>{isOpen ? <MinusIcon /> : <PlusIcon />}</button>
       </div>
       <AnimatePresence>
         {isOpen && (
@@ -71,7 +71,10 @@ const AccordinationItem = ({
 
 export const FAQs = () => {
   return (
-    <div className="bg-black text-white py-[72px] sm:py-24 bg-gradient-to-b" id="faq">
+    <div
+      className="bg-black text-white py-[72px] sm:py-24 bg-gradient-to-b"
+      id="faq"
+    >
       <div className="container">
         <h2 className="text-5xl sm:text-6xl sm:w-[648px] mx-auto text-center text-white tracking-tighter">
           Frequently Asked Questions
