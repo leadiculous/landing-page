@@ -66,7 +66,7 @@ export const CallToAction = ({ referrer }: { referrer?: string }) => {
           )}
           {state?.error === undefined && (
             <form
-              className="flex flex-col gap-2.5 mx-auto sm:flex-row"
+              className="flex flex-col gap-6 sm:gap-2.5 mx-auto sm:flex-row"
               action={formAction}
             >
               <input
