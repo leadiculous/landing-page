@@ -10,7 +10,7 @@ export function Banner() {
           href="#get-early-access"
           className="group inline-flex items-center justify-center text-center text-sm leading-loose"
         >
-          <span>🎉</span>
+          <span>🎁</span>
           <span className="font-bold ml-1">Get Early Access</span>{" "}
           <ChevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
         </a>
