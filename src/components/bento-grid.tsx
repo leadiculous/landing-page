@@ -6,6 +6,7 @@ import { Check } from "lucide-react";
 import { RedditCard } from "./reddit-card";
 import { DM } from "./DM";
 import Image from "next/image";
+import { cn } from "./lib/utils";
 
 const logos = ["/reddit-logo.svg", "/favicon-32x32.png", "/twitter-x-logo.svg"];
 
@@ -102,7 +103,7 @@ const CardWithEffect = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div
-      className="relative bg-[#000] flex-1 rounded-xl border border-white/30 p-4 overflow-hidden"
+      className="relative bg-[#000] flex-1 rounded-xl border border-white/30 p-4"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -130,11 +131,10 @@ const CardWithEffect = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const AWSIcon = () => {
+const AIDMS = () => {
   return (
     <div className="flex flex-col justify-center h-full">
-      {/* TODO: fix this so both item are visible and responsive */}
-      <div className="flex flex-col xl:flex-row gap-8 justify-center h-full items-center relative">
+      <div className="flex flex-col xl:flex-row gap-8 justify-center h-full items-start relative">
         <RedditCard username="PurpleLover" subreddit="r/LeadGeneration">
           Does anyone know a good and <strong> affordable lead finder</strong>{" "}
           platform? None of the solutions I{"'"}ve tried so far have been able
@@ -160,7 +160,7 @@ const AWSIcon = () => {
   );
 };
 
-const BentoBox1 = () => {
+export const BentoBox1 = ({className}: {className?: string}) => {
   const chartRef = useRef(null);
   const [isChartVisible, setIsChartVisible] = useState(false);
 
@@ -193,8 +193,8 @@ const BentoBox1 = () => {
   }, [chartRef]);
 
   return (
-    <div className="bg-[#000000] flex justify-center items-center rounded-lg ">
-      <div className="flex flex-col md:flex-row gap-4 w-full max-w-7xl min-h-[800px] md:min-h-[800px] md:h-[800px]">
+    <div className={cn("bg-[#000000] flex justify-center items-center rounded-lg", className)}>
+      <div className="flex flex-col md:flex-row gap-4 w-full max-w-7xl">
         <CardWithEffect>
           <div className="flex flex-col justify-between h-full">
             <div className="mb-4 px-6 mt-6">
@@ -286,7 +286,7 @@ const BentoBox1 = () => {
             </div>
           </div>
         </CardWithEffect>
-        <div className="flex flex-col w-full md:w-1/2 gap-5 h-full md:h-[800px]">
+        <div className="flex flex-col w-full md:w-1/2 gap-5 h-full]">
           <CardWithEffect>
             <div className="flex flex-col justify-center h-full">
               <LogoBeam />
@@ -303,20 +303,10 @@ const BentoBox1 = () => {
             </div>
           </CardWithEffect>
           <CardWithEffect>
-            <AWSIcon />
+            <AIDMS />
           </CardWithEffect>
         </div>
       </div>
     </div>
   );
 };
-
-function Bentodemo() {
-  return (
-    <div className="mt-14">
-      <BentoBox1 />
-    </div>
-  );
-}
-
-export default Bentodemo;

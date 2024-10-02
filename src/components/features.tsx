@@ -1,4 +1,4 @@
-import Bentodemo from "./bento-grid";
+import { BentoBox1 } from "./bento-grid";
 
 export const Features = () => {
   return (
@@ -9,11 +9,12 @@ export const Features = () => {
         </h2>
         <div className="max-w-xl mx-auto">
           <p className="text-center mt-5 text-xl text-white/70">
-            With leadiculous you can save <strong>100+ hours / month</strong> of manual research. Focus on what matters most.
+            With leadiculous you can save <strong>100+ hours / month</strong> of
+            manual research. Focus on what matters most.
           </p>
         </div>
         <div className="flex flex-col items-center justify-center sm:flex-row gap-4">
-          <Bentodemo />
+          <BentoBox1 className="mt-14" />
         </div>
       </div>
     </div>
