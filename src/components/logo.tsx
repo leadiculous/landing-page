@@ -1,17 +1,12 @@
 "use client";
 
-import { type PropsWithChildren } from "react";
 import { cn } from "./lib/utils";
 
-export type LogoProps = PropsWithChildren<{
-  as: "h1" | "h2";
-}>;
+export type LogoProps = {
+  as: "h1" | "h2" | "p";
+};
 
-export function Logo({
-  as,
-  children,
-  className,
-}: LogoProps & { className?: string }) {
+export function Logo({ as, className }: LogoProps & { className?: string }) {
   const Component = as;
 
   return (
@@ -21,7 +16,7 @@ export function Logo({
         className
       )}
     >
-      {children}
+      Leadiculous
     </Component>
   );
 }
