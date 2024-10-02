@@ -6,7 +6,7 @@ import MinusIcon from "../assets/icons/minus.svg";
 import { motion, AnimatePresence } from "framer-motion";
 const items = [
   {
-    question: "How many leads can I monitor?",
+    question: "How many leads can I generate?",
     answer:
       "Unlimited! You can monitor as many leads as you want, regardless of the plan you're on.",
   },

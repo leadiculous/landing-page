@@ -40,7 +40,7 @@ export const ProductShowcase = () => {
               className="mt-14"
             />
           <p className="italic text-center text-sm font-semibold mt-2">
-            * The screenshot above is subject to change because the project is still in early access.
+            * The screenshot above is subject to change as we continue to build and prepare for launch.
           </p>
           </motion.div>
         </div>

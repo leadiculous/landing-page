@@ -155,7 +155,7 @@ export default function PricingTable() {
             "Realtime web notifications",
             "Custom notifications, webhooks",
             "AI crafted DMs",
-            "Automated follow-up DMs",
+            "AI follow-up DMs",
             "Analytics"
           ]}
         />

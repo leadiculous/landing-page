@@ -48,8 +48,8 @@ export const CallToAction = ({ referrer }: { referrer?: string }) => {
           Get Early Access
         </h2>
         <p className="text-xl text-white/70  mt-5">
-          Join our waitlist and get <strong>free early access</strong> to our
-          platform as soon as we launch. Offer lasts until public release!
+          Join our waitlist and get <strong>free early access</strong> to the
+          platform as soon as we launch. Offer lasts until public release.
         </p>
         <div className="mt-10">
           {state?.error === true && (
