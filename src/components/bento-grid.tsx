@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { ArrowDown, ArrowRight, Check } from "lucide-react";
 import { RedditCard } from "./reddit-card";
 import { DM } from "./DM";
 import Image from "next/image";
@@ -140,6 +140,8 @@ const AIDMS = () => {
           platform? None of the solutions I{"'"}ve tried so far have been able
           to deliver the results I need.
         </RedditCard>
+        <ArrowRight className="hidden xl:block size-20 text-white/70 self-center -m-8" />
+        <ArrowDown className="block xl:hidden size-5 text-white/70 self-center -m-8" />
         <DM>
           Hello <strong>u/PurpleLover</strong>, I saw your post on{" "}
           <strong>r/LeadGeneration</strong> regarding an{" "}
