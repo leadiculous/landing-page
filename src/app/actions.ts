@@ -37,7 +37,7 @@ export async function submitEmail(
 
     const data = await res.json();
 
-    console.log('new email submitted', data);
+    console.log('new waitlist submission', data);
 
     return {
       message: "You have been added to the waitlist. Thank you for signing up!",

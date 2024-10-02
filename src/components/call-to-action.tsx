@@ -8,7 +8,7 @@ import { submitEmail as submitEmailAction } from "@/app/actions";
 import { useFormStatus, useFormState } from "react-dom";
 import { Alert, AlertDescription, AlertTitle } from "./alert";
 
-export const CallToAction = ({referrer}: {referrer?: string}) => {
+export const CallToAction = ({ referrer }: { referrer?: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [state, formAction] = useFormState(
     submitEmailAction.bind(null, referrer),
@@ -51,31 +51,35 @@ export const CallToAction = ({referrer}: {referrer?: string}) => {
           Join our waitlist and get <strong>free early access</strong> to our
           platform as soon as we launch. Offer lasts until public release!
         </p>
-        {state?.error === true && (
-            <Alert variant="error" className="mt-10">
+        <div className="mt-10">
+          {state?.error === true && (
+            <Alert variant="error">
               <AlertTitle>Error</AlertTitle>
               <AlertDescription>{state.message}</AlertDescription>
             </Alert>
           )}
           {state?.error === false && (
-            <Alert variant="success" className="mt-10">
+            <Alert variant="success">
               <AlertTitle>Success</AlertTitle>
               <AlertDescription>{state.message}</AlertDescription>
             </Alert>
           )}
-        <form
-          className="mt-10 flex flex-col gap-2.5 mx-auto sm:flex-row"
-          action={formAction}
-        >
-          <input
-            type="email"
-            name="email"
-            placeholder="john.doe@example.com"
-            className="h-12 bg-white/20 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] sm:flex-1 focus:ring-1 ring-purple-400 outline-none"
-            required
-          />
-          <SubmitButton />
-        </form>
+          {state?.error === undefined && (
+            <form
+              className="flex flex-col gap-2.5 mx-auto sm:flex-row"
+              action={formAction}
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="john.doe@example.com"
+                className="h-12 bg-white/20 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] sm:flex-1 focus:ring-1 ring-purple-400 outline-none"
+                required
+              />
+              <SubmitButton />
+            </form>
+          )}
+        </div>
       </div>
     </div>
   );
