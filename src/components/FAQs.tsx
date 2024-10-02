@@ -8,7 +8,7 @@ const items = [
   {
     question: "How many leads can I generate?",
     answer:
-      "Unlimited! You can monitor as many leads as you want, regardless of the plan you're on.",
+      "Unlimited! You receive as many leads as we can find for your campaign, regardless of the plan you're on.",
   },
   {
     question: "What payment methods do you accept?",
