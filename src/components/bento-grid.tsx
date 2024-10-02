@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { RedditCard } from "./reddit-card";
 import { DM } from "./DM";
+import Image from "next/image";
 
 const logos = ["/reddit-logo.svg", "/favicon-32x32.png", "/twitter-x-logo.svg"];
 
@@ -16,7 +17,7 @@ const LogoBeam = () => {
     <div className="flex items-center justify-center min-h-52">
       <div className="relative flex items-center">
         <div className="bg-[#000] border border-white/30  rounded-2xl flex items-center justify-center size-14 p-3">
-          <img src={logos[0]} alt="Reddit logo" />
+          <Image src={logos[0]} width={100} height={100} alt="Reddit logo" />
         </div>
         <div
           className="relative"
@@ -41,7 +42,7 @@ const LogoBeam = () => {
           />
         </div>
         <div className="relative bg-black border-2 border-white/70 rounded-2xl flex items-center justify-center size-16 overflow-hidden shadow-[0_0_15px_5px_#dbe0e2]">
-          <img src={logos[1]} alt="Leadiculous logo" />
+          <Image src={logos[1]} width={100} height={100} alt="Leadiculous logo" />
           <motion.div
             className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
             initial={{ x: "-100%" }}
@@ -78,7 +79,7 @@ const LogoBeam = () => {
           />
         </div>
         <div className="bg-black border border-white/30 rounded-2xl flex items-center justify-center size-14">
-          <img src={logos[2]} alt="Twitter / X logo" />
+          <Image src={logos[2]} width={100} height={100} alt="Twitter / X logo" />
         </div>
       </div>
     </div>
@@ -177,14 +178,16 @@ const BentoBox1 = () => {
         threshold: 0.5,
       }
     );
+    const currentChartRef = chartRef.current;
 
-    if (chartRef.current) {
-      observer.observe(chartRef.current);
+    if (currentChartRef) {
+      observer.observe(currentChartRef);
     }
 
+
     return () => {
-      if (chartRef.current) {
-        observer.unobserve(chartRef.current);
+      if (currentChartRef) {
+        observer.unobserve(currentChartRef);
       }
     };
   }, [chartRef]);
