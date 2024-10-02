@@ -1,31 +1,25 @@
-import { Banner } from "@/components/Banner";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { LogoTicker } from "@/components/LogoTicker";
-import { Features } from "@/components/Features";
-import { ProductShowcase } from "@/components/ProductShowcase";
+import { Banner } from "@/components/banner";
+import { Navbar } from "@/components/navbar";
+import { Hero } from "@/components/hero";
+import { Features } from "@/components/features";
+import { ProductShowcase } from "@/components/product-showcase";
 import { FAQs } from "@/components/FAQs";
-import { CallToAction } from "@/components/CallToAction";
-import { Footer } from "@/components/Footer";
-import { Pricing } from "@/components/Pricingdemo";
-
+import { CallToAction } from "@/components/call-to-action";
+import { Footer } from "@/components/footer";
+import { Pricing } from "@/components/pricing-demo";
 
 export default function Home() {
   return (
     <>
-    <div className="overflow-x-hidden">
-      <Banner />
-      <Navbar />
-      <Hero />
-      <LogoTicker />
-      
-      <Features />
-      
-      <ProductShowcase />
-      <FAQs />
-      <Pricing/>
-     
-      <CallToAction />
+      <div className="overflow-x-hidden">
+        <Banner />
+        <Navbar />
+        <Hero />
+        <Features />
+        <ProductShowcase />
+        <Pricing />
+        <FAQs />
+        <CallToAction />
       </div>
       <Footer />
     </>
