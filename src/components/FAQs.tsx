@@ -76,7 +76,7 @@ export const FAQs = () => {
         <h2 className="text-5xl sm:text-6xl sm:w-[648px] mx-auto text-center text-white tracking-tighter">
           Frequently Asked Questions
         </h2>
-        <div className="mt-12 max-w-[648px] mx-auto">
+        <div className="my-12 max-w-[648px] mx-auto">
           {items.map(({ question, answer }) => (
             <AccordinationItem
               question={question}
