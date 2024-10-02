@@ -1,7 +1,7 @@
 {
-  "name": "saas-landing-page-template",
+  "name": "leads-app-landing-page",
   "version": "0.1.0",
-  "description": "landing page template for saas products",
+  "description": "landing page for Leadiculous",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,8 +9,8 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "author": "Mudunuri Bhaskara Karthikeya Varma <karthikmudunuri999@gmail.com>",
-  "license": "MIT",
+  "author": "Sleeyax <yourd3veloper@gmail.com>",
+  "license": "UNLICENSED",
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
