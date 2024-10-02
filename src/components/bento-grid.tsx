@@ -274,7 +274,7 @@ export const BentoBox1 = ({className}: {className?: string}) => {
               </h1>
 
               {[
-                "5x better conversion than cold DM",
+                "5x more effective than cold DM",
                 "10x higher chance of opened DM",
                 "Hundreds of hours saved each month",
               ].map((item, index) => (

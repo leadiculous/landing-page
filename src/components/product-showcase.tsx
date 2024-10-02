@@ -17,12 +17,12 @@ export const ProductShowcase = () => {
     <div className="bg-black text-white bg-gradient-to-b from-black to-[#5D2CA8] py-[72px] sm:py-24" id="showcase">
       <div className="container">
         <h2 className="text-center text-5xl font-bold tracking-tighter">
-          Intuitive interface
+          Intuitive design
         </h2>
         <div className="max-w-xl mx-auto">
           <p className="text-xl text-white/70 text-center mt-5 ">
             Say goodbye to clunky interfaces. Our platform is designed with
-            simplicity in mind.
+            ease of use in mind.
           </p>
         </div>
         <div className="flex justify-center">
