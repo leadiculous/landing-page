@@ -16,8 +16,8 @@ export const Hero = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <p className="text-2xl text-center mt-8 max-w-2xl">
-          Monitor the web <strong>in realtime</strong> and get notified of leads <br /> ready to purchase <strong>your product or service</strong>.
+          <p className="text-2xl text-center mt-8">
+           Monitor the web <strong>in real-time</strong> and get instant alerts for leads <br /> ready to buy <strong>your product or service</strong>.
           </p>
         </div>
         <div className="flex justify-center mt-8">

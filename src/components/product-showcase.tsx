@@ -40,8 +40,8 @@ export const ProductShowcase = () => {
               className="mt-14"
               priority
             />
-          <p className="italic text-center text-sm font-semibold mt-2">
-            * The screenshot above is subject to change as we continue to build and prepare for launch.
+          <p className="italic text-center text-xs font-semibold mt-2">
+            * subject to change
           </p>
           </motion.div>
         </div>

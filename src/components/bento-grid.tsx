@@ -43,7 +43,12 @@ const LogoBeam = () => {
           />
         </div>
         <div className="relative bg-black border-2 border-white/70 rounded-2xl flex items-center justify-center size-16 overflow-hidden shadow-[0_0_15px_5px_#dbe0e2]">
-          <Image src={logos[1]} width={100} height={100} alt="Leadiculous logo" />
+          <Image
+            src={logos[1]}
+            width={100}
+            height={100}
+            alt="Leadiculous logo"
+          />
           <motion.div
             className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
             initial={{ x: "-100%" }}
@@ -80,7 +85,12 @@ const LogoBeam = () => {
           />
         </div>
         <div className="bg-black border border-white/30 rounded-2xl flex items-center justify-center size-14">
-          <Image src={logos[2]} width={100} height={100} alt="Twitter / X logo" />
+          <Image
+            src={logos[2]}
+            width={100}
+            height={100}
+            alt="Twitter / X logo"
+          />
         </div>
       </div>
     </div>
@@ -162,7 +172,7 @@ const AIDMS = () => {
   );
 };
 
-export const BentoBox1 = ({className}: {className?: string}) => {
+export const BentoBox1 = ({ className }: { className?: string }) => {
   const chartRef = useRef(null);
   const [isChartVisible, setIsChartVisible] = useState(false);
 
@@ -186,7 +196,6 @@ export const BentoBox1 = ({className}: {className?: string}) => {
       observer.observe(currentChartRef);
     }
 
-
     return () => {
       if (currentChartRef) {
         observer.unobserve(currentChartRef);
@@ -195,7 +204,12 @@ export const BentoBox1 = ({className}: {className?: string}) => {
   }, [chartRef]);
 
   return (
-    <div className={cn("bg-[#000000] flex justify-center items-center rounded-lg", className)}>
+    <div
+      className={cn(
+        "bg-[#000000] flex justify-center items-center rounded-lg",
+        className
+      )}
+    >
       <div className="flex flex-col-reverse md:flex-row-reverse gap-4 w-full max-w-7xl">
         <CardWithEffect>
           <div className="flex flex-col justify-between h-full">
@@ -277,10 +291,10 @@ export const BentoBox1 = ({className}: {className?: string}) => {
 
               {[
                 "5x more effective than cold DM",
-                "10x higher chance of opened DM",
+                "10x higher chance of opened DMs",
                 "Hundreds of hours saved each month",
               ].map((item, index) => (
-                <div key={index} className="flex gap-2 items-center">
+                <div key={index} className="flex gap-2 items-center my-2">
                   <Check className="size-5" />
                   <p className="text-white/70 text-lg">{item}</p>
                 </div>
@@ -297,9 +311,9 @@ export const BentoBox1 = ({className}: {className?: string}) => {
                   Monitor social media
                 </h1>
                 <p className="text-white/70 text-lg">
-                  Using our <strong>in-house AI</strong> solution, we monitor
-                  multiple social media sources and provide you with matching
-                  leads for your campaign.
+                  We monitor multiple social media sources and deliver targeted
+                  leads for your campaign, filtered through our <strong>in-house AI</strong> solution to ensure
+                  relevance.
                 </p>
               </div>
             </div>
