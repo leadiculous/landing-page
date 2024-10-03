@@ -196,7 +196,7 @@ export const BentoBox1 = ({className}: {className?: string}) => {
 
   return (
     <div className={cn("bg-[#000000] flex justify-center items-center rounded-lg", className)}>
-      <div className="flex flex-col md:flex-row gap-4 w-full max-w-7xl">
+      <div className="flex flex-col-reverse md:flex-row-reverse gap-4 w-full max-w-7xl">
         <CardWithEffect>
           <div className="flex flex-col justify-between h-full">
             <div className="mb-4 px-6 mt-6">
