@@ -8,7 +8,7 @@ const dmSans = DM_Sans({ subsets: ["latin"] });
 const SITE_URL = process.env.NEXT_PUBLIC_URL;
 const title = "Leadiculous - Realtime lead generation for your business";
 const description =
-  "Gather leads from social media with ease. Leadiculous monitors the web and notifies you when someone is looking for your product or service.";
+  "Capture leads effortlessly from social media with Leadiculous. Receive real-time alerts when potential customers are searching for your product or service.";
 const siteName = "Leadiculous";
 
 export const metadata: Metadata = {
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: 'black',
-}
+  themeColor: "black",
+};
 
 export default function RootLayout({
   children,
