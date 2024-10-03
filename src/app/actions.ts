@@ -46,7 +46,7 @@ export async function submitEmail(
   } catch (err: any) {
     console.error(err);
     return {
-      message: `Failed to submit email: ${err?.message?.toLowercase() ?? 'unknown error'}. Please try again later.`,
+      message: `Failed to submit email: ${err?.message?.toLowerCase() ?? 'unknown error'}. Please try again later.`,
       error: true,
     };
   }
