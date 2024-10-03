@@ -1,6 +1,7 @@
 {
-  "short_name": "L",
+  "short_name": "Leadiculous",
   "name": "Leadiculous",
+  "categories": ["technology", "business", "marketing", "sales", "lead generation"],
   "icons": [
     {
       "src": "/favicon-16x16.png",
@@ -15,6 +16,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ffffff",
+  "theme_color": "#000000",
   "background_color": "#000000"
 }
