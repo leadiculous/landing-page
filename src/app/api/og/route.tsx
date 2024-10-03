@@ -155,7 +155,7 @@ type ArrayItem<T> = T extends (infer U)[] ? U : never;
 type Fonts = ImageResponseOptions["fonts"];
 type Font = ArrayItem<Fonts>;
 
-export async function readFonts(dirPath: string): Promise<Fonts> {
+async function readFonts(dirPath: string): Promise<Fonts> {
   try {
     const files = await readdir(dirPath);
 
