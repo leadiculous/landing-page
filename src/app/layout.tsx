@@ -8,8 +8,8 @@ const dmSans = DM_Sans({ subsets: ["latin"] });
 const SITE_URL = process.env.NEXT_PUBLIC_URL;
 const title = "Leadiculous - Realtime lead generation for your business";
 const description =
-  "Capture leads effortlessly from social media with Leadiculous. Receive real-time alerts when potential customers are searching for your product or service.";
-const siteName = "Leadiculous";
+  "Effortlessly find new customers ready to buy your product or service. Leadiculous monitors the web in real-time so you don't have to.";
+const siteName = "Leadiculous"; 
 
 export const metadata: Metadata = {
   title,
