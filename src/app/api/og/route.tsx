@@ -5,14 +5,41 @@ import { join } from "path";
 import { PropsWithChildren } from "react";
 
 export async function GET(request: Request) {
-  const fonts = await readFonts(join("src", "app", "api", "og", "_fonts"));
-  const searchParams = new URL(request.url).searchParams;
-
   // This endpoint should only be available in development mode.
   // We don't need to expose this in production because we don't need dynamic OG images.
   // Instead, we generate the OG image once and copy it to the `public` folder.
   if (!process.env.NODE_ENV.startsWith("dev")) {
     return NextResponse.json({ error: "Service Unavailable" }, { status: 503 });
+  }
+
+  const searchParams = new URL(request.url).searchParams;
+  const renderTwitterBanner = searchParams.has("twitter");
+  const imageOptions: ImageResponseOptions = {
+    width: 1200,
+    height: 630,
+    fonts: await readFonts(join("src", "app", "api", "og", "_fonts")),
+    debug: searchParams.has("debug"),
+  };
+
+  // If the `twitter` query parameter is present, we render a Twitter/X banner instead.
+  if (renderTwitterBanner) {
+    return new ImageResponse(
+      (
+        <BackgroundGradient>
+          <Eclipse />
+          <Overlay>
+            <Center>
+              <Title>leadiculous.io</Title>
+              <SubTitle>Discover new customers with ease</SubTitle>
+            </Center>
+            <BottomRight>
+              <Footer />
+            </BottomRight>
+          </Overlay>
+        </BackgroundGradient>
+      ),
+     imageOptions,
+    );
   }
 
   // The returned element here is based on the Hero component.
@@ -24,58 +51,16 @@ export async function GET(request: Request) {
         <Eclipse />
         <Overlay>
           <Center>
-            <h1
-              style={{
-                display: "flex",
-                fontSize: "6rem",
-                lineHeight: "1",
-                fontWeight: "700",
-                textAlign: "center",
-                margin: "0",
-                textShadow: "5px 5px black",
-              }}
-            >
-              Realtime lead finder
-            </h1>
-            <h2
-              style={{
-                display: "flex",
-                fontSize: "2.5rem",
-                lineHeight: "1",
-                fontWeight: "400",
-                textAlign: "center",
-                margin: "0",
-                textShadow: "5px 5px black",
-              }}
-            >
-              Discover new customers on social media
-            </h2>
+            <Title>Realtime lead finder</Title>
+            <SubTitle>Discover new customers with ease</SubTitle>
           </Center>
-          <BottomRight
-            style={{
-              gap: "1rem",
-            }}
-          >
-            {["ai", "automation", "b2c"].map((tag, i) => (
-              <span
-                key={i}
-                style={{
-                  fontSize: "1.5rem",
-                }}
-              >
-                #{tag.toUpperCase()}
-              </span>
-            ))}
+          <BottomRight>
+            <Footer />
           </BottomRight>
         </Overlay>
       </BackgroundGradient>
     ),
-    {
-      width: 1200,
-      height: 630,
-      fonts,
-      debug: searchParams.has("debug"),
-    }
+   imageOptions,
   );
 }
 
@@ -178,6 +163,67 @@ function BottomRight({ children, style }: Props) {
       }}
     >
       {children}
+    </div>
+  );
+}
+
+function Title({ children, style }: Props) {
+  return (
+    <h1
+      style={{
+        ...style,
+        display: "flex",
+        fontSize: "6rem",
+        lineHeight: "1",
+        fontWeight: "700",
+        textAlign: "center",
+        margin: "0",
+        textShadow: "5px 5px black",
+      }}
+    >
+      {children}
+    </h1>
+  );
+}
+
+function SubTitle({ children, style }: Props) {
+  return (
+    <h2
+      style={{
+        ...style,
+        display: "flex",
+        fontSize: "2.5rem",
+        lineHeight: "1",
+        fontWeight: "400",
+        textAlign: "center",
+        margin: "0",
+        textShadow: "5px 5px black",
+      }}
+    >
+      {children}
+    </h2>
+  );
+}
+
+function Footer({ style }: Props) {
+  return (
+    <div
+      style={{
+        ...style,
+        display: "flex",
+        gap: "1rem",
+      }}
+    >
+      {["ai", "automation", "b2c"].map((tag, i) => (
+        <span
+          key={i}
+          style={{
+            fontSize: "1.5rem",
+          }}
+        >
+          #{tag.toUpperCase()}
+        </span>
+      ))}
     </div>
   );
 }
