@@ -32,7 +32,7 @@ export async function submitEmail(
     });
 
     if (!res.ok) {
-      throw new Error("Invalid response received from getwaitlist.com");
+      throw new Error("Invalid response received from waitlist provider");
     }
 
     const data = await res.json();
