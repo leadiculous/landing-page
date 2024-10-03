@@ -26,7 +26,7 @@ export const Navbar = () => {
       <div className="px-4">
         <div className="container bg-black">
           <div className="py-4 flex items-center justify-between">
-            <Logo as="h1" className="size-12 mt-1 w-fit" />
+            <Logo as="h1" className="mt-1 w-fit" />
             <div className="border border-white border-opacity-30 h-10 w-10 inline-flex justify-center items-center rounded-lg md:hidden">
               <Sheet>
                 <SheetTrigger>
@@ -35,7 +35,7 @@ export const Navbar = () => {
                 <SheetContent onCloseAutoFocus={event => event.preventDefault()}>
                   <SheetHeader>
                     <SheetTitle>
-                      <Logo as="p" className="size-12 w-fit" />
+                      <Logo as="p" className="w-fit" />
                     </SheetTitle>
                     <SheetDescription className="hidden">mobile navigation menu</SheetDescription>
                     <nav className="text-white gap-6 items-center flex flex-col">
