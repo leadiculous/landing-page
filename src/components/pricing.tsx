@@ -124,7 +124,7 @@ export default function PricingTable() {
           price={{ yearly: 29, monthly: 35 }}
           planDescription="Perfect for small projects"
           features={[
-            "Leads generation from Reddit, Twitter/X",
+            "Leads from Reddit, Twitter/X, ...",
             "Realtime Web Notifications",
           ]}
         />
@@ -137,7 +137,7 @@ export default function PricingTable() {
           price={{ yearly: 49, monthly: 55 }}
           planDescription="Perfect for startups"
           features={[
-            "Leads generation from Reddit, Twitter/X",
+            "Leads from Reddit, Twitter/X, ...",
             "Realtime web notifications",
             "Custom notifications, webhooks",
             "AI crafted DMs"
@@ -151,7 +151,7 @@ export default function PricingTable() {
           price={{ yearly: 79, monthly: 85 }}
           planDescription="Perfect for enterprises"
           features={[
-            "Leads generation from Reddit, Twitter/X",
+            "Leads from Reddit, Twitter/X, ...",
             "Realtime web notifications",
             "Custom notifications, webhooks",
             "AI crafted DMs",
