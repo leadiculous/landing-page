@@ -5,16 +5,13 @@ import { join } from "path";
 import { PropsWithChildren } from "react";
 
 export async function GET() {
-  /* const fontData = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/DMSans-Regular.ttf`
-  ).then((res) => res.arrayBuffer());  */
   const fonts = await readFonts(join("src", "app", "api", "og", "_fonts"));
 
   // This endpoint should only be available in development mode.
   // We don't need to expose this in production because we don't need dynamic OG images.
   // Instead, we generate the OG image once and copy it to the `public` folder.
   if (!process.env.NODE_ENV.startsWith("dev")) {
-    return NextResponse.json({ error: "Not Found" }, { status: 404 });
+    return NextResponse.json({ error: "Service Unavailable" }, { status: 503 });
   }
 
   // The returned element here is based on the Hero component.
