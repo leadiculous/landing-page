@@ -38,6 +38,7 @@ export const ProductShowcase = () => {
               ref={appImage}
               alt="app screen"
               className="mt-14"
+              priority
             />
           <p className="italic text-center text-sm font-semibold mt-2">
             * The screenshot above is subject to change as we continue to build and prepare for launch.
