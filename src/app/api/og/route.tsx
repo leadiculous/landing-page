@@ -4,8 +4,9 @@ import { ImageResponseOptions, NextResponse } from "next/server";
 import { join } from "path";
 import { PropsWithChildren } from "react";
 
-export async function GET() {
+export async function GET(request: Request) {
   const fonts = await readFonts(join("src", "app", "api", "og", "_fonts"));
+  const searchParams = new URL(request.url).searchParams;
 
   // This endpoint should only be available in development mode.
   // We don't need to expose this in production because we don't need dynamic OG images.
@@ -50,6 +51,22 @@ export async function GET() {
               Discover new customers on social media
             </h2>
           </Center>
+          <BottomRight
+            style={{
+              gap: "1rem",
+            }}
+          >
+            {["ai", "automation", "b2c"].map((tag, i) => (
+              <span
+                key={i}
+                style={{
+                  fontSize: "1.5rem",
+                }}
+              >
+                #{tag.toUpperCase()}
+              </span>
+            ))}
+          </BottomRight>
         </Overlay>
       </BackgroundGradient>
     ),
@@ -57,15 +74,20 @@ export async function GET() {
       width: 1200,
       height: 630,
       fonts,
-      // debug: true,
+      debug: searchParams.has("debug"),
     }
   );
 }
 
-function BackgroundGradient({ children }: PropsWithChildren) {
+type Props = PropsWithChildren<{
+  style?: React.CSSProperties;
+}>;
+
+function BackgroundGradient({ children, style }: Props) {
   return (
     <div
       style={{
+        ...style,
         display: "flex",
         background:
           "linear-gradient(to bottom, rgb(0, 0, 0), rgb(32, 13, 66) 34%, rgb(79, 33, 161) 65%, rgb(164, 110, 219) 82%)",
@@ -80,10 +102,11 @@ function BackgroundGradient({ children }: PropsWithChildren) {
   );
 }
 
-function Eclipse() {
+function Eclipse({ style }: Pick<Props, "style">) {
   return (
     <div
       style={{
+        ...style,
         display: "flex",
         backgroundColor: "black",
         backgroundImage:
@@ -110,20 +133,13 @@ function Eclipse() {
   );
 }
 
-function Overlay({ children }: PropsWithChildren) {
+function Overlay({ children, style }: Props) {
   return (
     <div
       style={{
+        ...style,
         display: "flex",
         position: "relative",
-        marginLeft: "auto",
-        marginRight: "auto",
-        /* maxWidth: "1280px",
-        width: "100%", */
-        width: "1000px",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
-        // backgroundColor: "black",
       }}
     >
       {children}
@@ -131,16 +147,34 @@ function Overlay({ children }: PropsWithChildren) {
   );
 }
 
-function Center({ children }: PropsWithChildren) {
+function Center({ children, style }: Props) {
   return (
     <div
       style={{
+        ...style,
         display: "flex",
         flexDirection: "column",
         gap: "1rem",
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function BottomRight({ children, style }: Props) {
+  return (
+    <div
+      style={{
+        ...style,
+        display: "flex",
+        bottom: "0",
+        right: "0",
+        position: "absolute",
+        padding: "1rem",
       }}
     >
       {children}
