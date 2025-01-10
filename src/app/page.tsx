@@ -8,6 +8,7 @@ import { CallToAction } from "@/components/call-to-action";
 import { Footer } from "@/components/footer";
 import { Pricing } from "@/components/pricing-demo";
 import { headers } from "next/headers";
+import { Alert } from "@/components/alert";
 
 export default function Home() {
   const headersList = headers();
@@ -16,14 +17,19 @@ export default function Home() {
   return (
     <>
       <div className="overflow-x-hidden">
-        <Banner />
+      <a href="https://github.com/leadiculous/app/discussions/1" className="underline">
+        <Alert variant="error" className="bg-red-600 text-white text-center">
+          <strong>Project discontinued. Click here for more information.</strong>
+        </Alert>
+      </a>
+        {/* <Banner /> */}
         <Navbar />
         <Hero />
         <Features />
         <ProductShowcase />
         <Pricing />
         <FAQs />
-        <CallToAction referrer={referrer} />
+        {/* <CallToAction referrer={referrer} /> */}
       </div>
       <Footer />
     </>
